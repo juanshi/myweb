@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT21</title>
+    <link rel="stylesheet" type="text/css" href="BT21.css"/>
+</head>
+<style type="text/css" >
+    body{
+        background-image:url(images/bt21/67b1abd55c6818a9529289dff805f6db1532057254.jpg);
+        background-position:center;
+        background-repeat:no-repeat;
+        background-size: 2000px;
+        background-attachment: fixed;
+        image-orientation: revert;
+    }
+    h1 {
+        color: #fffe27;
+        font-size: 10px;
+    }
+    h2 {
+        text-indent: 8mm;
+        font-family: 楷体,sans-serif;
+        color: black;
+        font-size: 20px;
+        letter-spacing: 1mm;
+    }
+    h3 {
+        color: #fffe27;
+        font-size: 100px;
+        background-color: lightblue;
+    }
+    div1{
+        height: 50px;
+        border: 3px solid lightskyblue;
+        border-radius: 10px 10px 10px 10px;
+        margin-right: 800px;
+    }
+    div3 {
+        height: 500px;
+        border: 3px solid lightskyblue;
+        border-radius: 10px 10px 10px 10px;
+        margin-right: 800px;
+    }
+    #bg{
+
+        width:940px;
+        height:400px;
+
+    background：url(images/精品展示.jpg);
+
+    }
+
+    #sm{/*滚动对象样式*/
+
+        overflow:hidden;
+
+        width:920px;height:500px;
+
+        margin:0 auto;
+
+        padding-top:30px;
+
+    }
+
+</style>
+<body>
+<h3><p style="text-align: center">BT21官网</p></h3>
+<div>
+    <ul>
+        <li><a1 href="BT21.css">RJ</a1></li>
+        <li><a1 href="BT21.css">CHIMMY</a1></li>
+        <li><a1 href="BT21.css">KOYA</a1></li>
+        <li><a1 href="BT21.css">TATA</a1></li>
+        <li><a1 href="BT21.css">SHOOKY</a1></li>
+        <li><a1 href="BT21.css">MANG</a1></li>
+        <li><a1 href="BT21.css">COOKY</a1></li>
+    </ul>
+</div>
+<tr>
+<center>
+        <div id="bg">
+
+            <div id="sm">	<!--滚动div-->
+
+                <table>		<!--外表格1x2,且第2单元格是空的-->
+
+                    <tr>
+
+                        <td id="Pic1">
+
+                            <table>	<!--内表格1x9,存放9张图片-->
+
+                                <tr>
+
+                                    <td><img src="images/bt21/t01a643bd3b3e8693fe.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+
+                                    <td><img src="images/bt21/t01184193f1858ab8dc.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+
+                                    <td><img src="images/bt21/t01fe0c93537371ae79.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+
+                                    <td><img src="images/bt21/t018c49c2986ec393a9.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+
+                                    <td><img src="images/bt21/t0172733b886140cd2b.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+                                    <!--<td><img src="images/3.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+
+                                    <td><img src="images/4.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+
+                                    <td><img src="images/5.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+
+                                    <td><img src="images/6.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+
+                                    <td><img src="images/7.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+
+                                    <td><img src="images/8.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+
+                                    <td><img src="images/9.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>-->
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+                        <td id="Pic2"></td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+        <script>
+
+            Pic2.innerHTML=Pic1.innerHTML;//复制一组图片，但被隐藏
+
+            function scrolltoleft(){//定义向左移动的方法
+
+                sm.scrollLeft++;//改变层的水平坐标，实现向左移动
+
+                if(sm.scrollLeft>=Pic1.scrollWidth)//需要复位
+
+                    sm.scrollLeft=0;//层的位置复位，浏览器窗口的宽度有限的
+
+            }
+
+
+
+            var MyMar=setInterval(scrolltoleft,20); //定时器，方法名后不可加()
+
+
+
+            function mouseover(x){//放大图片
+
+                x.style.width="210";
+
+                x.style.height="256"
+
+                x.style.cursor="pointer"
+
+            }
+
+            function mouseout(x){//图片复原
+
+                x.style.width="105";
+
+                x.style.height="128"
+
+            }
+
+
+
+            //两面两行是用方法响应对象的事件
+
+            sm.onmouseover=function(){//匿名方法（函数）
+
+                clearInterval(MyMar);//停止滚动
+
+            }
+
+
+
+            sm.onmouseout=function(){
+
+                MyMar = setInterval(scrolltoleft,40);//继续滚动
+
+            }
+
+
+
+
+
+        </script>
+    <h1><p style="text-align: center;"> <span style="font-size: 35px;">点击图片进行购买</span></p></h1>
+    <div class="art_add_c">
+        <p style="text-align: center;">
+            <img src="http://www.linefriends.cn/Storage/master/gallery/20180920/6367303867124538807410646.jpg"/></p>
+        <p style="text-align: center;"> <span style="font-size: 16px;">对宇宙的另一头满怀好奇心的TATA，</span></p>
+        <p style="text-align: center;"><span style="font-size: 16px;">在和VAN一起旅行的途中意外着陆地球，并偶然下定决心，</span></p>
+        <p style="text-align: center;"><span style="font-size: 16px;">要成为地球上的超级巨星。</span></p>
+        <p style="text-align: center;"><span style="font-size: 16px;">最终与RJ，CHIMMY，COOKY，MANG，SHOOKY，KOYA这6名充满魅力的成员组成BT21，</span></p>
+        <p style="text-align: center;"><span style="font-size: 16px;">开始了成为超级巨星的梦想之旅…</span></p>
+        <p><br/></p><p style="text-align: center;"><br/>
+        <a href="https://www.linefriends.cn/SubCategory?TagIds=16" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=16">
+            <img src="http://www.linefriends.cn/Storage/master/gallery/20180921/6367312010338338086317895.jpg"/></a>
+        <a href="https://www.linefriends.cn/SubCategory?TagIds=17" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=17">
+            <img src="http://www.linefriends.cn/Storage/master/gallery/20180921/6367312012803121731286643.jpg"/></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=18" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=18">
+            <img src="http://www.linefriends.cn/Storage/master/gallery/20180921/6367312014972514138826742.jpg"/></a>
+            <a href="https://www.linefriends.cn/SubCategory?TagIds=14" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=14">
+                <img src="http://www.linefriends.cn/Storage/master/gallery/20181005/6367433092342862948539690.png"/></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=14" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=14"></a><br/></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=21" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=21">
+            <img src="http://www.linefriends.cn/Storage/master/gallery/20180921/6367312019042859082324813.jpg"/></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=19" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=19">
+            <img src="http://www.linefriends.cn/Storage/master/gallery/20180921/6367312020945471684810202.jpg"/></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=20" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=20">
+            <img src="http://www.linefriends.cn/Storage/master/gallery/20180921/6367312022785100037355026.jpg"/></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=15" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=15">
+            <img src="http://www.linefriends.cn/Storage/master/gallery/20180921/6367312024634786336169839.jpg"/></a>
+            <a href="https://www.linefriends.cn/SubCategory?TagIds=23" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=23">
+                <img src="http://www.linefriends.cn/Storage/master/gallery/20180920/6367303888027196904954053.jpg"/></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=20" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=20"></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=19" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=19"></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=21" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=21"></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=14" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=14"></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=18" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=18"></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=17" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=17"></a></p>
+        <p><a href="https://www.linefriends.cn/SubCategory?TagIds=16" target="_self" _href="https://www.linefriends.cn/SubCategory?TagIds=16"></a></p>
+        <p><br/></p>
+    </div>
+</center>
+</tr>
+    </div>
+<h2><div>
+    <div style="float:left;padding-left:10px;">品牌介绍</div>
+    <div style="float:left;padding-left:10px;">关于购买</div>
+    <div style="float:left;padding-left:10px;">关于会员</div>
+    <div style="float:left;padding-left:10px;">店铺指南</div>
+    <div style="float:left;padding-left:10px;">商品指南</div>
+    <div style="float:left;padding-left:10px;">物流配送</div>
+    <div style="float:left;padding-left:10px;">会员注册</div>
+    <div style="float:left;padding-left:10px;">联系我们</div>
+    <div style="float:left;padding-left:10px;">会员沟通</div>
+    <div style="float:left;padding-left:10px;">防弹少年团</div>
+    <div style="float:left;padding-left:10px;">订单详情</div>
+    <div style="float:left;padding-left:10px;">代言明星</div>
+    <div style="float:left;padding-left:10px;">其他问题</div>
+</div></h2>
+</body>
+</html>
